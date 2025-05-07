@@ -5,11 +5,9 @@ console.log('onConnected Event');
     Server Status Check
     statuscheck.connected
 */
-const statuscheck_delay = 300, // 5 minutes
-    statuscheck_voice = true;
+const statuscheck_delay = 300; // 5 minutes
 
 if (this.storage.statuscheck_delay == null) this.storage.statuscheck_delay = statuscheck_delay;
-if (this.storage.statuscheck_voice == null) this.storage.statuscheck_voice = statuscheck_voice;
 if (!this.task) this.task = null;
 
 if (!this.func) this.func = function() {
@@ -31,7 +29,7 @@ if (!this.func) this.func = function() {
                     
                     const message = `There ${(players != '1') ? 'are' : 'is'} ${players} player${(players != '1') ? 's' : ''} online and the current server time is ${data.time}, with ${nexttime} seconds remaining until ${nexttext}time`;
                     
-                    await self.app.sendTeamMessage(message, null, false, self.storage.statuscheck_voice, true);
+                    await self.app.sendTeamMessage(message);
                 }
             } catch (error) {
                 console.error('Error in status check:', error);

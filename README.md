@@ -9,12 +9,10 @@ A plugin that automatically checks and reports server status at regular interval
 - Configurable check interval (default: 5 minutes)
 - Reports current player count
 - Shows server time and time until next day/night cycle
-- Optional voice notifications
-- Customizable delay between checks
+- Sends status updates to team chat
 
 #### Configuration
 - `statuscheck_delay`: Time between status checks in seconds (default: 300)
-- `statuscheck_voice`: Enable/disable voice notifications (default: true)
 
 ## Contributing
 Feel free to submit issues and enhancement requests!
